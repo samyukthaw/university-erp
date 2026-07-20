@@ -1,4 +1,7 @@
-const { getStudentProfile } = require("../models/studentModel");
+const { 
+    getStudentProfile,
+    getStudentAttendance
+ } = require("../models/studentModel");
 
 async function getProfile(req, res) {
     try {
@@ -24,6 +27,30 @@ async function getProfile(req, res) {
     }
 }
 
+async function getAttendance(req, res) {
+
+    try {
+
+        const userId = req.user.id;
+
+        const attendance = await getStudentAttendance(userId);
+
+        res.status(200).json(attendance);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Server Error"
+        });
+
+    }
+
+}
+
 module.exports = {
-    getProfile
+    getProfile,
+    getAttendance
+
 };

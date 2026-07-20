@@ -1,15 +1,25 @@
 const express = require("express");
-const { getProfile } = require("../controllers/studentController");
+
+const { getProfile,
+    getAttendance
+} = require("../controllers/studentController");
 
 const authenticateToken = require("../middleware/authMiddleware");
-
 
 const router = express.Router();
 
 router.get(
     "/profile",
-    authenticateToken,
+    authenticateToken,      
     getProfile
 );
+
+router.get(
+    "/attendance",
+    authenticateToken,      
+    getAttendance
+);
+
+
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const pool = require("../config/db");
 
+//STUDENT PROFILE
 async function getStudentProfile(userId) {
 
     const query = `
@@ -23,6 +24,29 @@ async function getStudentProfile(userId) {
     return result.rows[0];
 }
 
+// GET ATTENDANCE
+async function getStudentAttendance(userId) {
+
+    const query = `
+        SELECT
+            subjects.name AS subject_name,
+            attendance.date,
+            attendance.status
+        FROM attendance
+        JOIN students
+            ON attendance.student_id = students.id
+        JOIN subjects
+            ON attendance.subject_id = subjects.id
+        WHERE students.user_id = $1
+        ORDER BY attendance.date DESC;
+    `;
+
+    const result = await pool.query(query, [userId]);
+
+    return result.rows;
+}
+
 module.exports = {
-    getStudentProfile
+    getStudentProfile,
+    getStudentAttendance
 };
