@@ -1,6 +1,7 @@
 require("dotenv").config({ path: "./.env" });
 
 const authRoutes = require("./routes/authRoutes");
+const studentRoutes = require("./routes/studentRoutes");
 
 console.log("===== ENV TEST =====");
 console.log("DB_NAME:", process.env.DB_NAME);
@@ -19,6 +20,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth",authRoutes);
+app.use("/api/student", studentRoutes);
+
 
 app.get("/", (req, res) => {
     res.send("University ERP Backend is Running 🚀");
