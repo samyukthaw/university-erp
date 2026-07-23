@@ -1,8 +1,11 @@
 const { 
     getStudentProfile,
-    getStudentAttendance
+    getStudentAttendance,
+    getStudentMarks,
+    getStudentAssignments
  } = require("../models/studentModel");
 
+// GET PROFILE FUNCTION
 async function getProfile(req, res) {
     try {
 
@@ -27,6 +30,7 @@ async function getProfile(req, res) {
     }
 }
 
+//GET ATTENDANCE FUNCTION
 async function getAttendance(req, res) {
 
     try {
@@ -49,8 +53,57 @@ async function getAttendance(req, res) {
 
 }
 
+//GET MARKS FUNCTION
+async function getMarks(req, res) {
+
+    try {
+
+        const userId = req.user.id;
+
+        const marks = await getStudentMarks(userId);
+
+        res.status(200).json(marks);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Server Error"
+        });
+
+    }
+
+}
+
+//GET ASSIGNMENTS
+async function getAssignments(req, res) {
+
+    try {
+
+        const userId = req.user.id;
+
+        const assignments = await getStudentAssignments(userId);
+
+        res.status(200).json(assignments);
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            message: "Server Error"
+        });
+
+    }
+
+}
+
+
 module.exports = {
     getProfile,
-    getAttendance
+    getAttendance,
+    getMarks,
+    getAssignments
 
 };
