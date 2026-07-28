@@ -3,7 +3,10 @@ const express = require("express");
 const { getProfile,
     getAttendance,
     getMarks,
-    getAssignments
+    getAssignments,
+    submitAssignment,
+    getTimetable,
+    getDashboard
 } = require("../controllers/studentController");
 
 const authenticateToken = require("../middleware/authMiddleware");
@@ -38,5 +41,25 @@ router.get(
     getAssignments
 );
 
+//submit assignment route
+router.post(
+    "/submit-assignment",
+    authenticateToken,      
+    submitAssignment
+);
+
+//get timetable route
+router.get(
+    "/timetable",
+    authenticateToken,      
+    getTimetable
+);
+
+//get dashboard route
+router.get(
+    "/dashboard",
+    authenticateToken,      
+    getDashboard
+);
 
 module.exports = router;
