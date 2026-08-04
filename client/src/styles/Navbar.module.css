@@ -1,0 +1,105 @@
+.navbar {
+
+    height: 70px;
+
+    background-color: #1F2937;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 40px;
+
+    border-radius: 14px;
+
+    margin-bottom: 30px;
+
+}
+
+.logo {
+
+    color: white;
+
+    font-family: "Outfit", sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+}
+
+.rightSection {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+.profileCircle {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background-color: #2563EB;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-family: "Outfit", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+.studentName {
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+}
+
+.logoutButton {
+
+    background-color: #DC2626;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 10px 18px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition: 0.25s;
+
+}
+
+.logoutButton:hover {
+
+    background-color: #B91C1C;
+
+}
