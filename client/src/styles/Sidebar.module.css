@@ -1,0 +1,123 @@
+.sidebar {
+
+    width: 180px;
+
+    height: 100vh;
+
+    background-color: #1F2937;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.logo {
+
+    color: white;
+
+    font-family: "Outfit", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    margin-bottom: 35px;
+
+}
+
+
+.navLinks {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+.link {
+
+    color: #D1D5DB;
+
+    text-decoration: none;
+
+    padding: 12px 16px;
+
+    border-radius: 8px;
+
+    transition: 0.25s;
+
+}
+
+.link:hover {
+
+    background-color: #374151;
+
+    color: white;
+
+}
+
+.active {
+
+    background-color: #2563EB;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 16px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+}
+
+.logoutButton {
+
+    margin-top: auto;
+
+    background-color: #DC2626;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.25s;
+
+}
+
+.logoutButton:hover {
+
+    background-color: #B91C1C;
+
+}
+
+.link,
+.active {
+
+    padding: 10px 14px;
+
+    font-size: 15px;
+
+}
+
+.mainContent {
+
+    padding: 30px;
+
+}

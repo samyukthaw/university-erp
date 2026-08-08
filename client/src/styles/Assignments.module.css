@@ -1,0 +1,63 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #111827;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 30px;
+}
+
+.heading {
+    font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.assignmentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.assignmentCard {
+    background-color: #1F2937;
+    border-radius: 14px;
+    padding: 22px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.assignmentCard h2 {
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.assignmentCard p {
+    color: #9CA3AF;
+    margin-bottom: 10px;
+}
+
+.assignmentCard span {
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.status {
+    color: white;
+    background-color: #374151;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.empty {
+    color: #9CA3AF;
+}

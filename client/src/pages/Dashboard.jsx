@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import { useState, useEffect } from "react";
 import api from "../api/axios";
 import styles from "../styles/Dashboard.module.css";
+import Sidebar from "../components/Sidebar";
 
 function Dashboard() {
 
@@ -63,8 +64,12 @@ if (error) {
 
     return (
 
-        <div className={styles.dashboardContainer}>
-            
+    <div className={styles.layout}>
+
+        <Sidebar />
+
+        <main className={styles.mainContent}>
+
             <Navbar
                 studentName={dashboard.student_name}
             />
@@ -78,8 +83,8 @@ if (error) {
             </p>
 
             <p className={styles.department}>
-    {dashboard.department} Department
-</p>
+                {dashboard.department} Department
+            </p>
 
             <div className={styles.cardContainer}>
 
@@ -131,7 +136,7 @@ if (error) {
                                     <td>{classItem.subject_name}</td>
 
                                     <td>
-                                        {classItem.start_time} - {classItem.end_time}
+                                        {classItem.start_time.slice(0,5)} - {classItem.end_time.slice(0,5)}
                                     </td>
 
                                     <td>{classItem.room}</td>
@@ -153,14 +158,16 @@ if (error) {
                         )}
 
                     </tbody>
+
                 </table>
 
             </div>
 
-        </div>
+        </main>
 
-    );
+    </div>
 
+);
 }
 
 export default Dashboard;

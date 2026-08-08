@@ -7,6 +7,7 @@ import Attendance from "./pages/Attendance";
 import Marks from "./pages/Marks";
 import Assignments from "./pages/Assignments";
 import Timetable from "./pages/Timetable";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
 
@@ -21,32 +22,56 @@ function App() {
 
             <Route
                 path="/dashboard"
-                element={<Dashboard />}
+                element={
+                    <ProtectedRoute>
+                        <Dashboard />
+                    </ProtectedRoute>
+                }
             />
 
             <Route
                 path="/profile"
-                element={<Profile />}
+                element={
+                    <ProtectedRoute>
+                        <Profile />
+                    </ProtectedRoute>
+                }
             />
 
             <Route
                 path="/attendance"
-                element={<Attendance />}
+                element={
+                    <ProtectedRoute>
+                        <Attendance />
+                    </ProtectedRoute>
+                }
             />
 
             <Route
                 path="/marks"
-                element={<Marks />}
+                element={
+                    <ProtectedRoute>
+                        <Marks />
+                    </ProtectedRoute>
+                }
             />
 
             <Route
                 path="/assignments"
-                element={<Assignments />}
+                element={
+                    <ProtectedRoute>
+                        <Assignments />
+                    </ProtectedRoute>
+                }
             />
 
             <Route
                 path="/timetable"
-                element={<Timetable />}
+                element={
+                    <ProtectedRoute>
+                        <Timetable />
+                    </ProtectedRoute>
+                }
             />
 
         </Routes>

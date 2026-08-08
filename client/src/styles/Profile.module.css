@@ -1,0 +1,78 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #111827;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 30px;
+}
+
+.heading {
+    font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.profileCard {
+    background-color: #1F2937;
+    border-radius: 14px;
+    padding: 30px;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.profileHeader {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #374151;
+}
+
+.profileCircle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #2563EB;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.profileHeader h2 {
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.profileHeader p {
+    color: #9CA3AF;
+    font-size: 15px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding-top: 25px;
+}
+
+.detailItem span {
+    color: #9CA3AF;
+    font-size: 13px;
+}
+
+.detailItem p {
+    color: white;
+    font-size: 16px;
+    margin-top: 6px;
+}

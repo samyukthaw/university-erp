@@ -1,0 +1,59 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #111827;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 30px;
+}
+
+.heading {
+    font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.attendanceCard {
+    background-color: #1F2937;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.attendanceCard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendanceCard th {
+    color: #9CA3AF;
+    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.attendanceCard td {
+    color: white;
+    padding: 16px 14px;
+    border-bottom: 1px solid #374151;
+    font-size: 15px;
+}
+
+.attendanceCard tr:last-child td {
+    border-bottom: none;
+}
+
+.attendanceCard tr:hover {
+    background-color: #374151;
+}
+
+.attendanceCard td:last-child {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+}

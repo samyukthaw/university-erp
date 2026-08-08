@@ -1,3 +1,14 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 30px;
+    background-color: #111827;
+}
+
 .dashboardContainer {
 
     min-height: 100vh;
