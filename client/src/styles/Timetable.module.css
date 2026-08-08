@@ -1,0 +1,55 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #111827;
+}
+
+.mainContent {
+    flex: 1;
+    padding: 30px;
+}
+
+.heading {
+    font-family: "Outfit", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.timetableCard {
+    background-color: #1F2937;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow-x: auto;
+}
+
+.timetableCard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.timetableCard th {
+    color: #9CA3AF;
+    text-align: left;
+    padding: 14px;
+    border-bottom: 1px solid #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.timetableCard td {
+    color: white;
+    padding: 16px 14px;
+    border-bottom: 1px solid #374151;
+    font-size: 15px;
+}
+
+.timetableCard tr:last-child td {
+    border-bottom: none;
+}
+
+.timetableCard tr:hover {
+    background-color: #374151;
+}

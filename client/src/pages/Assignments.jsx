@@ -7,6 +7,7 @@ import styles from "../styles/Assignments.module.css";
 function Assignments() {
 
     const [assignments, setAssignments] = useState([]);
+    const [studentName, setStudentName] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -18,18 +19,27 @@ function Assignments() {
 
                 const token = localStorage.getItem("token");
 
+                const config = {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                };
+
                 const response = await api.get(
                     "/student/assignments",
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }
+                    config
+                );
+
+                const profileResponse = await api.get(
+                    "/student/profile",
+                    config
                 );
 
                 console.log(response.data);
+                console.log(profileResponse.data);
 
                 setAssignments(response.data);
+                setStudentName(profileResponse.data.name);
 
             } catch (error) {
 
@@ -67,7 +77,7 @@ function Assignments() {
             <main className={styles.mainContent}>
 
                 <Navbar
-                    studentName="Student"
+                    studentName={studentName}
                 />
 
                 <h1 className={styles.heading}>

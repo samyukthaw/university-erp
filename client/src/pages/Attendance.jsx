@@ -7,6 +7,7 @@ import styles from "../styles/Attendance.module.css";
 function Attendance() {
 
     const [attendance, setAttendance] = useState([]);
+    const [studentName, setStudentName] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -18,18 +19,27 @@ function Attendance() {
 
                 const token = localStorage.getItem("token");
 
+                const config = {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                };
+
                 const response = await api.get(
                     "/student/attendance",
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    }
+                    config
+                );
+
+                const profileResponse = await api.get(
+                    "/student/profile",
+                    config
                 );
 
                 console.log(response.data);
+                console.log(profileResponse.data);
 
                 setAttendance(response.data);
+                setStudentName(profileResponse.data.name);
 
             } catch (error) {
 
@@ -67,7 +77,7 @@ function Attendance() {
             <main className={styles.mainContent}>
 
                 <Navbar
-                    studentName="Student"
+                    studentName={studentName}
                 />
 
                 <h1 className={styles.heading}>
@@ -97,11 +107,17 @@ function Attendance() {
 
                                     <tr key={index}>
 
-                                        <td>{item.subject_name}</td>
+                                        <td>
+                                            {item.subject_name}
+                                        </td>
 
-                                        <td>{item.total_classes}</td>
+                                        <td>
+                                            {item.total_classes}
+                                        </td>
 
-                                        <td>{item.classes_attended}</td>
+                                        <td>
+                                            {item.classes_attended}
+                                        </td>
 
                                         <td>
                                             {item.attendance_percentage}%
